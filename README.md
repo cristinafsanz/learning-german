@@ -93,6 +93,43 @@
 
 15. **`README.md`**: A text file containing useful reference information about your project.
 
-## 💫 Deploy
+## 💫 Deploy with GitHub Pages
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/marinaaisa/nuxt-markdown-blog-starter)
+- Add this code to `nuxt.config.js`:
+
+  ```
+  const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+    router: {
+      base: '/{repository-name}/'
+    }
+  } : {}
+
+  export default {
+    ...routerBase
+  }
+  ```
+
+- Install `push-dir` package:
+
+  ```
+  npm install push-dir --save-dev
+  ```
+
+- Add the script to deploy:
+
+  ```
+  "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  ```
+
+- Push these changes to remote.
+
+- Execute:
+
+  ```
+  npm run generate
+  npm run deploy
+  ```
+
+- GitHub Pages enabled in `gh-pages` branch and code available in `https://{profile}.github.io/{repository-name}/`.
+
+- Example: https://cristinafsanz.github.io/learning-german/.
