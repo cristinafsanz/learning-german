@@ -5,6 +5,12 @@ import blogsEn from './contents/en/blogsEn.js'
 import blogsEs from './contents/es/blogsEs.js'
 import Mode from "frontmatter-markdown-loader/mode"
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/learning-german/'
+  }
+} : {}
+
 const productionUrl = {
   en: "/en",
   es: "/es"
@@ -12,6 +18,7 @@ const productionUrl = {
 const baseUrl = 'https://marinaaisa.com';
 
 module.exports = {
+  ...routerBase,
   env: {
     baseUrl,
     productionUrl
@@ -97,7 +104,7 @@ module.exports = {
     }
   },
   plugins: ['~/plugins/lazyload', '~/plugins/globalComponents', { src: '~plugins/ga.js', ssr: false }],
-  modules: [  
+  modules: [
     '@nuxtjs/style-resources',
     ['nuxt-i18n', I18N],
     'nuxt-webfontloader'
