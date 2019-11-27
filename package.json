@@ -18,8 +18,9 @@
   "scripts": {
     "dev": "nuxt",
     "generate": "nuxt generate",
-    "analyze": "nuxt build --analyze",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "analyze": "nuxt build --analyze"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^3.0.0",

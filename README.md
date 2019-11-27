@@ -109,6 +109,12 @@
   }
   ```
 
+- Add the new script to generate the dist for github pages:
+
+```
+"generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+```
+
 - Install `push-dir` package:
 
   ```
@@ -126,7 +132,7 @@
 - Execute:
 
   ```
-  npm run generate
+  npm run generate:gh-pages
   npm run deploy
   ```
 
