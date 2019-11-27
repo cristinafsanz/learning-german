@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{118:function(e,n,o){"use strict";o.r(n),n.default={title:"Aprender alemán",description:"Cómo mejorar tu alemán a través de audiovisuales"}}}]);

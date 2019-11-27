@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{116:function(e,n,o){"use strict";o.r(n),n.default={title:"Learning German",description:"How to improve your German level with audiovisuals"}}}]);
